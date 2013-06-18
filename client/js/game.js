@@ -898,9 +898,8 @@ function(InfoManager, BubbleManager, Renderer, Map, Animation, Sprite, AnimatedT
                         self.registerEntityDualPosition(self.player);
                     }
 
-                    if(self.isZoningTile(self.player.gridX, self.player.gridY)) {
-                        self.enqueueZoningFrom(self.player.gridX, self.player.gridY);
-                    }
+                    self.enqueueZoningFrom(self.player.gridX, self.player.gridY);
+		    self.focusPlayer();
 
                     self.player.forEachAttacker(self.makeAttackerFollow);
 
