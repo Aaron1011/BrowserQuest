@@ -1,6 +1,6 @@
 var requirejs = require('requirejs');
 var should = require('should');
-var globals;
+var globals = new Object();
 
 requirejs.config({nodeRequire: require, baseUrl: 'js/'});
 
