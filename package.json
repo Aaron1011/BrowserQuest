@@ -14,4 +14,7 @@
     , "redis": ">0"
     , "connect": ">2"
   }
+  , "scripts": {
+      "test": "make test"
+  }
 }
