@@ -16,6 +16,7 @@
     , "mocha": ">1"
     , "requirejs": ">2"
     , "should": ">1"
+    , "sinon": ">1"
   }
   , "scripts": {
       "test": "make test"
