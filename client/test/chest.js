@@ -35,5 +35,13 @@ describe('Chest', function() {
       self.chest.isMoving().should.be.false
     });
   });
+
+  describe('#onOpen', function() {
+    it('sets open_callback to the passed function', function() {
+      var func = function() {};
+      self.chest.onOpen(func);
+      self.chest.open_callback.toString().should.equal(func.toString());
+    });
+  });
 });
 
