@@ -12,11 +12,13 @@ requirejs(['lib/class', '../../shared/js/gametypes'], function(_Class, _Types, _
 
 describe('Chest', function() {
   var Chest;
-  beforeEach(function(done) {
+  var self = this;
+
+  before(function(done) {
 
     requirejs(['chest'], function(_Module) {
       Chest = _Module;
-      this.chest = new Chest(1);
+      self.chest = new Chest(1);
       done();
     });
   });
@@ -24,8 +26,7 @@ describe('Chest', function() {
 
   describe('#getSpriteName', function() {
     it('should return "chest"', function() {
-      this.chest = new Chest(5);
-      this.chest.getSpriteName().should.equal("chest");
+      self.chest.getSpriteName().should.equal("chest");
     });
   });
 });
