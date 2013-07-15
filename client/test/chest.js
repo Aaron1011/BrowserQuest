@@ -29,5 +29,11 @@ describe('Chest', function() {
       self.chest.getSpriteName().should.equal("chest");
     });
   });
+
+  describe('#isMoving', function() {
+    it('should return false', function() {
+      self.chest.isMoving().should.be.false
+    });
+  });
 });
 
