@@ -4,7 +4,7 @@ var globals = new Object();
 
 requirejs.config({nodeRequire: require, baseUrl: 'js/'});
 
-requirejs(['lib/class', '../../shared/js/gametypes'], function(_Class, _Types, _Chest) {
+requirejs(['lib/class', '../../shared/js/gametypes'], function(_Class, _Types) {
   globals.Class = _Class;
   globals.Types = _Types;
   global.window = globals
