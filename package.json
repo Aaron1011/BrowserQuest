@@ -13,6 +13,7 @@
     , "memcache": ">0"
     , "redis": ">0"
     , "connect": ">2"
+    , "mocha": ">1"
   }
   , "scripts": {
       "test": "make test"
