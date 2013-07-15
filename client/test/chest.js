@@ -1,5 +1,6 @@
-var requirejs = require('requirejs');
-var should = require('should');
+var requirejs = require('requirejs'),
+    should = require('should'),
+    sinon = require('sinon');
 var globals = new Object();
 
 requirejs.config({nodeRequire: require, baseUrl: 'js/'});
@@ -14,7 +15,7 @@ describe('Chest', function() {
   var Chest;
   var self = this;
 
-  before(function(done) {
+  beforeEach(function(done) {
 
     requirejs(['chest'], function(_Module) {
       Chest = _Module;
@@ -41,6 +42,21 @@ describe('Chest', function() {
       var func = function() {};
       self.chest.onOpen(func);
       self.chest.open_callback.toString().should.equal(func.toString());
+    });
+  });
+
+  describe('#open', function() {
+    it('calls open_callback if set', function() {
+      var spy = sinon.spy();
+      self.chest.onOpen(spy);
+      self.chest.open();
+      spy.called.should.equal.true;
+    });
+
+    it('does not call open_callback if not set', function() {
+      var spy = sinon.spy(self.chest.open_callback);
+      self.chest.open();
+      spy.called.should.equal.false;
     });
   });
 });
