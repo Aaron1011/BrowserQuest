@@ -1,6 +1,6 @@
 var config = {}
 
-config.port = process.env.OPENSHIFT_NODEJS_PORT;
+config.port = process.env.PORT;
 config.redis_port = process.env.HEROKU_REDIS_PORT
 config.redis_host = process.env.HEROKU_REDIS_HOST
 
